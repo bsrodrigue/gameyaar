@@ -1,0 +1,392 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&family=Lobster&display=swap");
+:root {
+    --main-color: #2b2e4a;
+    --secondary-color: #e84545;
+    --ternary-color: #903749;
+
+    --main-font: "Comfortaa";
+    --secondary-font: "Lobster";
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* ICONS */
+header i {
+    color: white;
+    font-size: 1.5em;
+}
+
+footer i{
+    color: white;
+}
+
+.backtotop{
+    background-color: white;
+    border-radius: 100%;
+     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    position: fixed;
+    z-index: 3;
+    bottom: 5em;
+    right: 2em;
+}
+
+.backtotop i{
+    color: var(--secondary-color);
+    font-size: 2em;
+    padding: 0.5em;
+}
+
+/* I - Layout */
+
+.wrapper {
+    max-width: 1000px;
+    width: 95vw;
+    margin: 0 auto;
+}
+
+/* I-1 Header */
+
+.header-brand > .wrapper,
+.header-main > .wrapper,
+.header-consoles > .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-brand > .wrapper {
+    justify-content: center;
+}
+
+.header-brand {
+    background-color: var(--secondary-color);
+}
+
+.header-main {
+    background-color: var(--secondary-color);
+}
+
+.header-consoles {
+    background-color: var(--main-color);
+}
+
+.header-navbar {
+    display: flex;
+    justify-content: start;
+}
+
+.header-consoles-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    overflow-x: hidden;
+}
+
+/* I-2 Hero */
+
+.hero {
+    background: var(--main-color); /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to top,
+        var(--secondary-color),
+        var(--main-color)
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to top,
+        var(--secondary-color),
+        var(--main-color)
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.hero-content {
+    display: flex;
+    padding: 2em 1em;
+}
+
+.mario-welcome {
+    height: 200px;
+}
+
+/* I-3 Game Grid */
+.game-grid {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 900px){
+    .game-grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.game-box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+
+.game-box:hover > .game-box-overlay {
+    left: 0;
+    background-color: #2b2e4a90;
+    transition: all 0.5s ease-in-out;
+}
+
+.game-box-overlay,
+.game-img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.game-box-overlay {
+    width: 100%;
+    height: 100%;
+    left: 100%;
+    background-color: var(--main-color);
+    transition: all 0.8s ease-in-out;
+}
+
+.game-img {
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}
+
+footer {
+    background-color: var(--main-color);
+    padding: 3em 1em;
+    margin-top: 3em;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+footer .social-media{
+    font-size: 1.5em;
+    margin-left: 1em;
+}
+
+/* II-Typography  */
+
+html {
+    font-size: min(max(0.5rem, 2vw), 1rem);
+}
+
+body {
+    font-family: var(--main-font);
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        font-size: 12px;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+}
+
+.section-title {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 1em;
+    margin-bottom: 2em;
+}
+
+.see-all {
+    border: 1px solid black;
+    text-align: center;
+}
+
+/* II-1 Header  */
+
+header a,
+header p {
+    color: white;
+    font-size: 0.8em;
+    padding: 1em 0em;
+}
+
+.header-brand {
+    font-size: 2em;
+    font-weight: bold;
+    font-family: "Lobster";
+}
+
+.navbar-link {
+    margin-right: 2em;
+}
+
+/* II-2 Hero */
+
+.hero,
+.hero a {
+    color: white;
+}
+
+.hero-title {
+    font-weight: bold;
+    font-size: 2.5em;
+    font-family: "Lobster";
+}
+
+.hero-description {
+    text-align: justify;
+    margin: 1em 0em;
+}
+
+.see-consoles {
+    border: 1px solid white;
+}
+
+.see-consoles::before {
+    background-color: var(--main-color) !important;
+}
+
+/* II-3 Games */
+.game-box-overlay {
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+.game-box-overlay-title {
+    font-family: "Lobster";
+    font-size: 2em;
+    margin-bottom: 0.4em;
+}
+
+.game-box-overlay-description {
+    text-align: justify;
+}
+
+/* III-Forms */
+
+form {
+    display: flex;
+}
+
+input {
+    border: none;
+    padding: 0.8em;
+}
+
+input::placeholder {
+    font-style: italic;
+}
+
+input:focus {
+    outline: none;
+}
+
+input[type="submit"] {
+    background-color: var(--main-color);
+    color: white;
+}
+
+.fa-search {
+    background-color: var(--main-color);
+    padding: 0.5em;
+}
+
+/* IV-Cards */
+.card {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    padding: 0.5em;
+}
+
+.console-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1em;
+    grid-row-gap: 3em;
+    margin: 3em 0em;
+}
+
+@media screen and (max-width: 500px) {
+    .console-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.console-card {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.console-img {
+    max-width: 80%;
+    position: relative;
+    top: -3em;
+    left: 0;
+}
+.console-title {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.console-description {
+    font-weight: lighter;
+}
+
+.console-price {
+    font-weight: bold;
+}
+
+.add-to-cart {
+    font-size: 0.7em;
+    border: 1px solid black;
+}
+
+/* V-Buttons */
+.fill-btn {
+    position: relative;
+    display: inline-block;
+    padding: 10px 30px;
+    margin: 20px 0px;
+    z-index: 0;
+}
+
+.fill-btn::before {
+    content: "";
+    background-color: var(--secondary-color);
+    position: absolute;
+    width: 0%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transition: 0.2s ease-in-out;
+    z-index: -1;
+}
+
+.fill-btn:hover::before {
+    width: 100%;
+}
+
+.fill-btn:hover {
+    color: white;
+}
+
+/* VI-Special Effects & Other shit */
+.bottom-radius {
+    border-radius: 0em 0em 1em 1em;
+}
